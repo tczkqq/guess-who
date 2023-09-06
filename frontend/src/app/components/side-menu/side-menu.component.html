@@ -1,0 +1,44 @@
+<section id="side-menu">
+  <mat-nav-list class="menu">
+    <a mat-list-item routerLinkActive="active" routerLink="/home">
+      <mat-icon matListItemIcon>home</mat-icon>
+      <span matListItemTitle>{{ "Home" | translate }}</span>
+    </a>
+
+    <a mat-list-item routerLinkActive="active" routerLink="/browse">
+      <mat-icon matListItemIcon>explore</mat-icon>
+      <span matListItemTitle>{{ "Browse" | translate }}</span>
+    </a>
+  </mat-nav-list>
+
+  <!-- Authorized 
+  <div class="account-actions">
+    <button mat-button>
+      <mat-icon>explore</mat-icon>
+      <span>{{ "Login" | translate }}</span>
+    </button>
+
+    <mat-divider [vertical]="true"></mat-divider>
+
+    <button mat-button>
+      <mat-icon>explore</mat-icon>
+      <span>{{ "Register" | translate }}</span>
+    </button>
+  </div> -->
+
+  <!-- Unauthorized  -->
+  <div class="account-actions">
+    <button mat-button (click)="onLoginClick()">
+      <mat-icon>explore</mat-icon>
+      <span>{{ "Login" | translate }}</span>
+    </button>
+
+    <mat-divider [vertical]="true"></mat-divider>
+
+    <button mat-button (click)="onRegisterClick()">
+      <mat-icon>explore</mat-icon>
+      <span>{{ "Register" | translate }}</span>
+    </button>
+  </div>
+</section>
+Tutaj wstaw footer

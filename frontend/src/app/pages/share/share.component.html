@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Share</h1>
+
+<mat-dialog-content class="mat-typography window">
+  Copy board link and share it with your friends.
+  <div class="copy-field">
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="link" readonly />
+    </mat-form-field>
+    <button
+      color="primary"
+      mat-fab
+      aria-label="Copy"
+      (click)="onCopyClick()"
+      matTooltip="Copy"
+    >
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+</mat-dialog-actions>

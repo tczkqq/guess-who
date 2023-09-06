@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Settings</h1>
+
+<mat-dialog-content class="mat-typography">
+  <h4 class="setting-section">Theme</h4>
+  <mat-chip-listbox
+    aria-label="Theme selection"
+    (change)="onThemeChange($event)"
+  >
+    <mat-chip-option
+      *ngFor="let theme of themeList"
+      [value]="theme.value"
+      [highlighted]="currentTheme === theme.value"
+    >
+      <mat-icon matChipAvatar>{{ theme.icon }}</mat-icon>
+      {{ theme.name | translate }}
+    </mat-chip-option>
+  </mat-chip-listbox>
+
+  <h4 class="setting-section">Language</h4>
+  <mat-chip-listbox
+    aria-label="Language selection"
+    (change)="onLangChange($event)"
+  >
+    <mat-chip-option
+      *ngFor="let lang of langList"
+      [value]="lang.code"
+      [highlighted]="currentLang === lang.code"
+    >
+      <img matChipAvatar [src]="flagsPath + lang.flag" alt="Flag" />
+      {{ lang.name }}
+    </mat-chip-option>
+  </mat-chip-listbox>
+
+  <h4 class="setting-section">Other</h4>
+  <mat-slide-toggle disabled matTooltip="To be implemented.">
+    Sound
+  </mat-slide-toggle>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+</mat-dialog-actions>

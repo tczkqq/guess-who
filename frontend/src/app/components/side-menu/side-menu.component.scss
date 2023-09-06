@@ -1,0 +1,21 @@
+#side-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+    padding: 0 !important;
+}
+
+
+.active {
+    text-decoration: underline;
+}
+
+.menu a{
+    padding-right: 2em;
+}
+
+.account-actions{
+    display: inline-flex;
+    gap: 1em;
+}

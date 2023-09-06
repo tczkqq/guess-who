@@ -1,0 +1,7 @@
+<app-top-menu (menuClick)="drawer.toggle()"></app-top-menu>
+<mat-drawer-container autosize class="content-height">
+  <mat-drawer #drawer mode="side" [opened]="!mobileDisplay">
+    <app-side-menu></app-side-menu>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

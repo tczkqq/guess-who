@@ -1,0 +1,12 @@
+{
+    "endpoints": {
+        "login": "/api/auth/login/",
+        "register": "/api/auth/register/",
+        "logout": "/api/auth/logout/",
+        "user": "/api/auth/user/",
+        "cards": "/api/game/cards/",
+        "boards": "/api/game/boards/"
+
+    },
+    "api": "http://127.0.0.1:8000"
+}

@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Register</h1>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="form">
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="login" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Email"
+        formControlName="email"
+        type="email"
+      />
+
+      <mat-error *ngIf="form.get('email')?.hasError('email')">
+        Please enter a valid email address.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Password"
+        formControlName="password"
+        type="password"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Confirm password"
+        formControlName="passwordConfirm"
+        type="password"
+      />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true">Close</button>
+  <button mat-button (click)="onRegisterClick()" [disabled]="!form.valid">
+    Register
+  </button>
+</mat-dialog-actions>

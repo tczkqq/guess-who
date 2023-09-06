@@ -1,0 +1,8 @@
+<div *ngIf="mode === 'spinner'" [class.center-x]="centerSpinner">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-progress-bar
+  *ngIf="mode === 'bar'"
+  mode="indeterminate"
+></mat-progress-bar>

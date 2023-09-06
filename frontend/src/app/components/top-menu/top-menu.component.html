@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <button mat-icon-button aria-label="Menu icon" (click)="menuClick.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>{{ mobileDisplay ? null : ("Guess who!" | translate) }} </span>
+
+  <span class="spacer"></span>
+
+  <button
+    mat-button
+    matTooltip="Donate"
+    aria-label="Donate"
+    routerLink="/donate"
+  >
+    <mat-icon>favorite</mat-icon>
+    {{ mobileDisplay ? null : ("Donate" | translate) }}
+  </button>
+
+  <button
+    mat-button
+    matTooltip="Settings"
+    aria-label="Settings"
+    (click)="onSettingsClick()"
+  >
+    <mat-icon>settings</mat-icon>
+    {{ mobileDisplay ? null : ("Settings" | translate) }}
+  </button>
+
+  <button
+    mat-button
+    matTooltip="Share"
+    aria-label="Share"
+    (click)="onShareClick()"
+  >
+    <mat-icon>share</mat-icon>
+    {{ mobileDisplay ? null : ("Share" | translate) }}
+  </button>
+</mat-toolbar>

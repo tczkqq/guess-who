@@ -1,0 +1,13 @@
+.copy-field {
+    display: flex;
+    padding-top: 2em;
+    gap: 1em;
+
+    .mat-mdc-form-field {
+        width: 100%;
+    }
+}
+
+.window {
+    max-width: 50em;
+}

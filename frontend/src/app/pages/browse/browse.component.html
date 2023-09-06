@@ -1,0 +1,35 @@
+<main class="content">
+  <div class="center-x">
+    <mat-form-field class="search-form-field">
+      <mat-label>Search by name</mat-label>
+      <span matPrefix> &nbsp; <mat-icon>search</mat-icon></span>
+      <input matInput type="text" [formControl]="searchControl" />
+      <button
+        *ngIf="searchControl.value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchControl.reset()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <section class="card-list">
+    <mat-card *ngFor="let board of boards$ | async" class="card">
+      <mat-card-header>
+        <mat-card-title>{{ board.name }}</mat-card-title>
+        <mat-card-subtitle>{{ board.description }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="board.image" class="card-img" />
+      <mat-card-content>
+        <p>Including: (nazwy kart)</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Remix</button>
+        <button mat-button>Play</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</main>
